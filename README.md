@@ -1,18 +1,17 @@
 # jQuery Salary Calculator
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
-## Description // after reading instructions write in the description in your own words
-Your project description goes here. What problem did you solve? How did you solve it?
-
 ### Purpose
-The purpose of my repo is to demonstrate the benefit of running an application recording multiple employee salaries, 
-while adding up those salaries to visually display monthly cost. I hope you find this helpful.
+The purpose of my repo is to demonstrate the benefit of running an application to record multiple employee salaries, 
+visually adding those salaries together, and displaying total monthly employee cost. You could use this application to justify
+adding more employees, down size, or keep as is.
 
-In order to this, I will be using JavaScript and jQuery.
+In order to perform this application, I will be using JavaScript and jQuery.
 
-### Outline
+### General Outline
 
-This application will provide input fields to collect employee first name, last name, ID number, job title, and annual salary      
+My application will provide input fields to store employees first name, last name, ID number, job title, and annual salary. Once all 
+fields have been filled out, a 'Submit' button will collect the information, use that information to calculate monthly cost, output 
+that information before you on the screen, and reset the input fields. If the total monthly cost exceeds $20,000, your the total monthly 
+cost will have a red background.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
+I hope you find this helpful.
