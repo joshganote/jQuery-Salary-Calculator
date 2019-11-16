@@ -21,7 +21,6 @@ function submitEmployeeAction(event) {
         employeeTitle: $('#jobTitle').val(),
         employeeSalary: parseInt($('#annualSalary').val()),
     }
-    
     addToEmployee(employeeFormObject);
     resetInputs();  
 }
