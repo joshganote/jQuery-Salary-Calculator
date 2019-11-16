@@ -21,7 +21,8 @@ function submitEmployeeAction(event) {
         employeeTitle: $('#jobTitle').val(),
         employeeSalary: parseInt($('#annualSalary').val()),
     }
-    // I get an error message when trying to add lines 25-32 in my render function. Works fine if its in here.
+    // I get an error message when trying to add lines 26-33 in my render function. It says my employeeFormObject is  
+    // undefined. Works fine I guess if it's in here.
     $('.js-employeeInfo').append(`
     <div>
         <span>${employeeFormObject.employeeFirst} ${employeeFormObject.employeeLast} ${employeeFormObject.employeeID} ${employeeFormObject.employeeTitle} ${employeeFormObject.employeeSalary}</span>
