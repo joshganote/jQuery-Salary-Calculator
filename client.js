@@ -1,4 +1,4 @@
-console.log('JS');
+console.log('JQ');
 
 $(document).ready(readyNow);
 
@@ -8,7 +8,7 @@ let totalSalary = 0;
 function readyNow(){
     $('#employeeAction').on('submit', submitEmployeeAction);
     $('.js-btn-clear').on('click', resetInputs);
-    //$('.js-employeeInfo').on('click', '.js-btn-delete', deleteEntry)
+    $('.js-employeeInfo').on('click', '.js-btn-delete', deleteEntry)
 }
 
 function submitEmployeeAction(event) {
@@ -21,30 +21,29 @@ function submitEmployeeAction(event) {
         employeeTitle: $('#jobTitle').val(),
         employeeSalary: parseInt($('#annualSalary').val()),
     }
-    
-    employeeArray.push(employeeFormObject);
-
+    // I get an error message when trying to add lines 25-32 in my render function. Works fine if its in here.
     $('.js-employeeInfo').append(`
     <div>
         <span>${employeeFormObject.employeeFirst} ${employeeFormObject.employeeLast} ${employeeFormObject.employeeID} ${employeeFormObject.employeeTitle} ${employeeFormObject.employeeSalary}</span>
-        <button>Clear</button>
+        <button class="js-btn-delete">Clear</button>
     </div>
-    `);
-    //addToEmployee(employeeFormObject);
-    totalSalary += employeeFormObject.employeeSalary;
+    `); 
+
     $('.js-monthly').text(`Total Monthly Salary : $${totalSalary}`)
-    //resetInputs();    
+
+    addToEmployee(employeeFormObject);
+    resetInputs();    
 }
 
-/*
+
 function addToEmployee(employeeFormObject){
     employeeArray.push(employeeFormObject);
-    render();
+    render(); 
 }
-*/
 
 function deleteEntry() {
     $(this).parent().remove();
+    render(); 
 }
 
 
@@ -56,14 +55,10 @@ function resetInputs(){
     $('#annualSalary').val('');
 }
 
-/*
-function render(){
-    
+function addSalary(){
+    totalSalary = 0;
+    totalSalary += employeeFormObject.employeeSalary;
 }
-*/
+function render(){
 
-// let employeeFirst = $('#firstName').val();
-    // let employeeLast = $('#lastName').val();
-    // let employeeID = $('#iDNumber').val();
-    // let employeeTitle = $('#jobTitle').val();
-    // let employeeSalary = parseInt($('#annualSalary').val());
+}
