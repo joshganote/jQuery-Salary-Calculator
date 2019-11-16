@@ -21,18 +21,9 @@ function submitEmployeeAction(event) {
         employeeTitle: $('#jobTitle').val(),
         employeeSalary: parseInt($('#annualSalary').val()),
     }
-    // I get an error message when trying to add lines 25-32 in my render function. Works fine if its in here.
-    $('.js-employeeInfo').append(`
-    <div>
-        <span>${employeeFormObject.employeeFirst} ${employeeFormObject.employeeLast} ${employeeFormObject.employeeID} ${employeeFormObject.employeeTitle} ${employeeFormObject.employeeSalary}</span>
-        <button class="js-btn-delete">Clear</button>
-    </div>
-    `); 
-
-    $('.js-monthly').text(`Total Monthly Salary : $${totalSalary}`)
-
+    
     addToEmployee(employeeFormObject);
-    resetInputs();    
+    resetInputs();  
 }
 
 
@@ -42,8 +33,9 @@ function addToEmployee(employeeFormObject){
 }
 
 function deleteEntry() {
-    $(this).parent().remove();
-    render(); 
+    const id = $(this).parent().data('id');
+    employeeArray.splice(id,1);
+    render();
 }
 
 
@@ -55,10 +47,24 @@ function resetInputs(){
     $('#annualSalary').val('');
 }
 
-function addSalary(){
+function findTotal(){
     totalSalary = 0;
-    totalSalary += employeeFormObject.employeeSalary;
+    for ( let employee of employeeArray){
+        totalSalary += (employee.employeeSalary / 12); 
+    }
 }
-function render(){
 
+function render(){
+    $('.js-employeeInfo').empty();
+    findTotal();
+    for ( let i = 0; i < employeeArray.length; i++){
+        const employee = employeeArray[i];
+        $('.js-employeeInfo').append(`
+        <div data-id="${i}">
+            <span>${employee.employeeFirst} ${employee.employeeLast} ${employee.employeeID} ${employee.employeeTitle} ${employee.employeeSalary}</span>
+            <button class="js-btn-delete">Clear</button>
+        </div>
+        `); 
+    }
+    $('.js-monthly').text(`Total Monthly Salary : $${totalSalary}`)
 }
