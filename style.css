@@ -1,4 +1,5 @@
 body {
+    position: absolute;
     border: 2px solid black;
 }
 
@@ -12,13 +13,69 @@ body {
 }
 
 .input {
-    border-bottom: 2px solid black;
+    position: relative;
+    bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .add {
     color: black;
+    font-family: 'Quicksand', sans-serif;
+    bottom: 15px;
+    margin-left: 10px;
+}
+
+.employees {
+    font-family: 'Quicksand', sans-serif;
+    margin-left: 10px;
 }
 
 .tableHeader {
+    border: 2px solid black;
+    position: relative;
+    bottom: 15px;
+    margin-left: 10px;
+    font-family: 'Barlow', sans-serif;
+    
+}
+
+.table {
+    margin-left: 10px; 
     background-color: coral;
 }
+
+.first {
+    padding: 5px;
+}
+
+.last {
+    padding: 5px;
+}
+
+.id {
+    padding: 5px;
+}
+
+.job {
+    padding: 5px;
+}
+
+.annual {
+    padding: 5px;
+}
+
+.js-employeeInfo {
+    background-color:rgba(0, 255, 255, 0.527);
+    border: 2px solid black;
+}
+
+.clear {
+    color: coral;
+}
+
+.js-monthly {
+    margin-left: 10px; 
+    font-family: 'Quicksand', sans-serif;
+}
+

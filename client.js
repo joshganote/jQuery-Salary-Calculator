@@ -59,11 +59,11 @@ function deleteEntry() {
 
 function overMonthly() {
     if(totalSalary >= monthlyTotal) {
-        document.body.style.backgroundColor = "red";
+        $(".js-monthly").css("color","red")
         console.log('Too Much!');
-        }else {
-            document.body.style.backgroundColor = "white";
-            console.log('Keep Going!')
+    }else {
+        $(".js-monthly").css("color","black")
+        console.log('Keep Going!')
     }
 }
 
