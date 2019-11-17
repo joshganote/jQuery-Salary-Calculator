@@ -4,6 +4,7 @@ $(document).ready(readyNow);
 
 const employeeArray = [];
 let totalSalary = 0;
+let monthlyTotal = 20000;
 
 function readyNow(){
     $('#employeeAction').on('submit', submitEmployeeAction);
@@ -15,6 +16,7 @@ function submitEmployeeAction(event) {
     event.preventDefault();
 
     const employeeFormObject = {
+        
         employeeFirst: $('#firstName').val(),
         employeeLast: $('#lastName').val(),
         employeeID: $('#iDNumber').val(),
@@ -25,7 +27,6 @@ function submitEmployeeAction(event) {
     addToEmployee(employeeFormObject);
     resetInputs();  
 }
-
 
 function addToEmployee(employeeFormObject){
     employeeArray.push(employeeFormObject);
@@ -40,6 +41,7 @@ function deleteEntry() {
 
 
 function resetInputs(){
+ 
     $('#firstName').val('');
     $('#lastName').val('');
     $('#iDNumber').val('');
@@ -52,6 +54,7 @@ function findTotal(){
     for ( let employee of employeeArray){
         totalSalary += (employee.employeeSalary / 12); 
     }
+    overMonthly();
 }
 
 function render(){
@@ -66,5 +69,13 @@ function render(){
         </div>
         `); 
     }
-    $('.js-monthly').text(`Total Monthly Salary : $${totalSalary}`)
+    $('.js-monthly').text(`Total Monthly Salary : $${totalSalary.toFixed(2)}`)
 }
+
+function overMonthly() {
+    if(monthlyTotal >= monthlyTotal) {
+        console.log('Too Much!');
+    }else {
+    }
+}
+
