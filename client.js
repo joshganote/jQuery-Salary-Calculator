@@ -53,7 +53,6 @@ function resetInputs(){
 function deleteEntry() {
     const id = $(this).parent().data('id');
     employeeArray.splice(id,1);
-    
     render();
 }
 
@@ -87,4 +86,5 @@ function render(){
     }
     $('.js-monthly').text(`Total Monthly Salary : $${totalSalary.toFixed(2)}`)
 }
+
 
