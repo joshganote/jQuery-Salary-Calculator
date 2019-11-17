@@ -25,28 +25,12 @@ function submitEmployeeAction(event) {
     }
     
     addToEmployee(employeeFormObject);
-    resetInputs();  
+    resetInputs(); 
 }
 
 function addToEmployee(employeeFormObject){
     employeeArray.push(employeeFormObject);
     render(); 
-}
-
-function deleteEntry() {
-    const id = $(this).parent().data('id');
-    employeeArray.splice(id,1);
-    render();
-}
-
-
-function resetInputs(){
- 
-    $('#firstName').val('');
-    $('#lastName').val('');
-    $('#iDNumber').val('');
-    $('#jobTitle').val('');
-    $('#annualSalary').val('');
 }
 
 function findTotal(){
@@ -57,25 +41,50 @@ function findTotal(){
     overMonthly();
 }
 
-function render(){
-    $('.js-employeeInfo').empty();
-    findTotal();
-    for ( let i = 0; i < employeeArray.length; i++){
-        const employee = employeeArray[i];
-        $('.js-employeeInfo').append(`
-        <div data-id="${i}">
-            <span>${employee.employeeFirst} ${employee.employeeLast} ${employee.employeeID} ${employee.employeeTitle} ${employee.employeeSalary}</span>
-            <button class="js-btn-delete">Clear</button>
-        </div>
-        `); 
-    }
-    $('.js-monthly').text(`Total Monthly Salary : $${totalSalary.toFixed(2)}`)
+function resetInputs(){
+ 
+    $('#firstName').val('');
+    $('#lastName').val('');
+    $('#iDNumber').val('');
+    $('#jobTitle').val('');
+    $('#annualSalary').val('');
+}
+
+function deleteEntry() {
+    const id = $(this).parent().data('id');
+    employeeArray.splice(id,1);
+    
+    render();
 }
 
 function overMonthly() {
-    if(monthlyTotal >= monthlyTotal) {
+    if(totalSalary >= monthlyTotal) {
+        document.body.style.backgroundColor = "red";
         console.log('Too Much!');
-    }else {
+        }else {
+            document.body.style.backgroundColor = "white";
+            console.log('Keep Going!')
     }
+}
+
+function render(){
+    $('.js-employeeInfo').empty();
+    findTotal();
+
+    for ( let i = 0; i < employeeArray.length; i++){
+        const employee = employeeArray[i];
+        
+        $('.js-employeeInfo').append(`
+            <tr data-id="${i}">
+                <td>${employee.employeeFirst}</td>
+                <td>${employee.employeeLast}</td>
+                <td>${employee.employeeID}</td>
+                <td>${employee.employeeTitle}</td>
+                <td>${employee.employeeSalary}</td>
+                <td><button class="js-btn-delete">Clear</button></td>
+            </tr>
+        `); 
+    }
+    $('.js-monthly').text(`Total Monthly Salary : $${totalSalary.toFixed(2)}`)
 }
 

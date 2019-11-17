@@ -1,0 +1,24 @@
+body {
+    border: 2px solid black;
+}
+
+.header {
+    background-color: cornflowerblue;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 2px solid black;
+    color: whitesmoke;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.input {
+    border-bottom: 2px solid black;
+}
+
+.add {
+    color: black;
+}
+
+.tableHeader {
+    background-color: coral;
+}

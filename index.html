@@ -9,19 +9,39 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <body>
-        <form id="employeeAction">
-            <input type="text" name="firstName" placeholder="First Name" id="firstName">
-            <input type="text" name="lastName" placeholder="Last Name" id="lastName">
-            <input type="text" name="iDNumber" placeholder="ID Number" id="iDNumber">
-            <input type="text" name="jobTitle" placeholder="Job Title" id="jobTitle">
-            <input type="number" name="annualSalary" placeholder="Annual Salary" id="annualSalary">
-            <button type="submit" id="submit">Submit</button>
-        </form>
+        <header class="header">
+        <h1>jQuery Salary Calculator</h1>
+        </header>
+                <form id="employeeAction">
+                    <h2 class="add">Add Employee</h2>
+                    <div class="input">
+                    <input type="text" name="firstName" placeholder="First Name" id="firstName">
+                    <input type="text" name="lastName" placeholder="Last Name" id="lastName">
+                    <input type="text" name="iDNumber" placeholder="ID Number" id="iDNumber">
+                    <input type="text" name="jobTitle" placeholder="Job Title" id="jobTitle">
+                    <input type="number" name="annualSalary" placeholder="Annual Salary" id="annualSalary">
+                    <button type="submit" id="submit">Submit</button>
+                    </div>
+                </form>
 
-        <div class="js-employeeInfo"></div>
-        
-        <p class="js-monthly">Total Monthly Salary:</p>
+                <table>
+                    <thead class="tableHeader">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>ID Number</th>
+                            <th>Job Title</th>
+                            <th>Annual Salary</th>
+                        </tr>
+                    </thead>
 
+                    <tbody class="js-employeeInfo">
+
+                    </tbody>
+                </table>
+                
+        <p class="js-monthly">Total Monthly Salary: $0</p>
     </body>
 </html>
