@@ -8,6 +8,6 @@ In order to perform this application, I will be using JavaScript and jQuery.
 
 ### General Outline
 
-My application will provide input fields to store employees first name, last name, ID number, job title, and annual salary. Once all fields have been filled out, a 'Submit' button will collect the information, use the information to calculate monthly cost, output that information before you on the screen, while resetting the input fields. If the total monthly cost exceeds $20,000, the total monthly cost will have a red background.
+My application will provide input fields to store employees first name, last name, ID number, job title, and annual salary. Once all fields have been filled out, a 'Submit' button will collect the information, use the information to calculate monthly cost, output that information before you on the screen, while resetting the input fields. If the total monthly cost exceeds $20,000, the total monthly cost will turn red.
 
 I hope you find this helpful.
