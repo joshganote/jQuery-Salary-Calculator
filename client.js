@@ -86,5 +86,3 @@ function render(){
     }
     $('.js-monthly').text(`Total Monthly Salary : $${totalSalary.toFixed(2)}`)
 }
-
-
