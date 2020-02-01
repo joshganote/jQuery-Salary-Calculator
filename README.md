@@ -10,7 +10,7 @@ I will be creating an application to record employee salaries to report the tota
 1. Open text editor of choice and create an index.html, client.js file, and style.css file.
 2. Download the compressed 3.4.1 jQuery file from https://jquery.com/download/
 3. Add script tags for jquery and your client.js file in the <head> section of your index.html file.
-$. Link your style.css into the <head> section the index.html file.
+4. Link your style.css into the <head> section the index.html file.
 
 ## Usage
 
